@@ -12,8 +12,16 @@ int main(int argc, char** argv) {
 int V[MAX],
     numElem=MAX;
 
-    if (argc > 1) 
-        numElem = atoi(argv[1]);
+    if (argc > 1) {
+        numElem = atoi(argv[1]);        
+        if (numElem > MAX) {
+            numElem = MAX;
+        }
+        /** se o usuário passar por parâmero um número maior do MAX, 
+         * numElemen será igual a MAX para que não sejam impressos valores
+         * fora do range alocado para esse vetor
+        */
+    }
 
     srand ( time(NULL) );
 
